@@ -1,7 +1,7 @@
 # MyShoeList
-## Project Purpose: ShoeList is a website where users can add their favorite type of shoes based branding and type of shoe.Shoe list will have brands like Nike or Addias.
+## Project Purpose: ShoeList is a website where users can add their favorite jordan shoes based branding and type/number of shoe.Shoe list will Jordans 1-15.
 
-## Features: The features of our site includes saving users favorite shoes and brand type.Comment section for each shoe listing. Library of shoes in the database  that will be saved for viewing purposes. 
+## Features: The features of our site includes saving users favorite shoes and Jordan type.Information for each shoe listing. Library of shoes in the database that will be saved for viewing purposes. 
 
 ## Component Hierarchy
 1. <App.js />
@@ -22,12 +22,13 @@
 - Allowing different user accounts.
 - Tracking shoes based on user information.
 - Adding different shoes.
-- Adding different brands.
+- Adding comment section.
 
 ## Post-MVP 
 - search feature
 - carousel
-- ratings 
+- ratings resale prices
+- 
 
 ## ERD 
 
