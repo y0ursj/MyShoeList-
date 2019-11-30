@@ -25,6 +25,9 @@
 -Adding different brands.
 
 ## Post-MVP 
--search feature
--carousel
--ratings 
+- search feature
+- carousel
+- ratings 
+
+
+
