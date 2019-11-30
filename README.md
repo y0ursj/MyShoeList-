@@ -4,7 +4,6 @@
 ## Features: The features of our site includes saving users favorite shoes and brand type.Comment section for each shoe listing. Library of shoes in the database  that will be saved for viewing purposes. 
 
 ## Component Hierarchy
-
 1. <App.js />
 1a. <Header>
 1b. <Footer>
