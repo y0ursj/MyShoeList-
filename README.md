@@ -29,5 +29,9 @@
 - carousel
 - ratings 
 
+## ERD 
+
+https://www.lucidchart.com/invitations/accept/5873234c-a4bf-44c1-8c1a-b72f66841714
+
 
 
