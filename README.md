@@ -13,16 +13,16 @@
   
   
   ## Challenges: 
--Populating accounts for the appication.
--SEED DATA INFO
--Comment section 
+- Populating accounts for the appication.
+- SEED DATA INFO
+- Comment section 
 
 
 ## MVP 
--Allowing different user accounts.
--Tracking shoes based on user information.
--Adding different shoes.
--Adding different brands.
+- Allowing different user accounts.
+- Tracking shoes based on user information.
+- Adding different shoes.
+- Adding different brands.
 
 ## Post-MVP 
 - search feature
