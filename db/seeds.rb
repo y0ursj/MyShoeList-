@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Genres = Genre.create (
+
+david = User.create!(username: "BigJohn97", password: "123456")
+
+genres = Genre.create! (
     [
       {
         name: "Air Jordan 1",
@@ -85,14 +88,15 @@ Genres = Genre.create (
 
     ])
 
-    Shoes = Shoe.create! (
+    shoes = Shoe.create! (
       [
         {
         name: "Jordan 1",
         description:"HELLO",
-        price:"$160",
+        price:160.45,
         image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/Fcatalog/product/3/1/317111-062_1.png",
-        genre_id: 1
+        genre_id: 1,
+        user: david
         }
         
       ]

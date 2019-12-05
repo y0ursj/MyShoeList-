@@ -30,8 +30,9 @@ export const verifyUser = async () => {
   return false
 }
 
-export const createShoe = async (data) => {
-  const resp = await api.post('/shoes', { shoe: data })
+export const createShoe = async (data, genreId) => {
+  debugger;
+  const resp = await api.post(`/genres/${genreId}/shoes`, { shoe: data })
   return resp.data
 }
 export const readAllShoes = async () => {
@@ -39,7 +40,7 @@ export const readAllShoes = async () => {
   return resp.data
 }
 export const updateShoe = async (id, data) => {
-  const resp = await api.put(`/shoes/${id}`, { shoe: data })
+  const resp = await api.put(`/shoes/${id}`, data)
   return resp.data
 }
 export const destroyShoe = async (id) => {

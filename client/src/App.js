@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -19,6 +19,8 @@ import {
 } from './services/api-helper';
 import GenrePage from './components/GenrePage';
 import EditShoe from './components/EditShoe';
+import CreateShoe from './components/CreateShoe';
+
 
 
 class App extends React.Component {
@@ -29,11 +31,16 @@ class App extends React.Component {
       currentUser: null,
       authFormData: {
         username: '',
-        email: '',
         password: ''
       },
       genres: [],
-      shoes: []
+      shoes: [],
+      shoeForm: {
+        name: "",
+        image_url: "",
+        description: "",
+        price: "",
+      }
     };
   }
   async componentDidMount() {
@@ -57,28 +64,31 @@ class App extends React.Component {
     })
   }
 
-  newShoe = async (e) => {
-    e.preventDefault();
-    const shoe = await createShoe(this.state.shoeForm);
+  newShoe = async (genreId) => {
+    debugger;
+    const shoe = await createShoe(this.state.shoeForm, genreId);
     this.setState(prevState => ({
       shoes: [...prevState.shoes, shoe],
       shoeForm: {
         name: "",
-        photo: ""
+        image_url: "",
+        description: "",
+        price: "",
       }
     }))
   }
 
   editShoe = async () => {
     const { shoeForm } = this.state
-    await updateShoe(shoeForm.id, shoeForm);
+    const newShoe = await updateShoe(shoeForm.id, shoeForm);
     this.setState(prevState => (
       {
         shoes: prevState.shoes.map(shoe => {
-          return shoe.id === shoeForm.id ? shoeForm : shoe
+          return shoe.id === shoeForm.id ? newShoe : shoe
         }),
       }
     ))
+    this.props.history.push("/")
   }
 
   destroyShoe = async (id) => {
@@ -87,6 +97,7 @@ class App extends React.Component {
       shoes: prevState.shoes.filter(shoe => shoe.id !== id)
     }))
   }
+
 
   handleFormChange = (e) => {
     const { name, value } = e.target;
@@ -101,9 +112,11 @@ class App extends React.Component {
   mountEditForm = async (id) => {
     const shoes = await readAllShoes();
     const shoe = shoes.find(el => el.id === parseInt(id));
+
     this.setState({
       shoe: shoe,
-      shoeForm: shoe
+      shoeForm: shoe,
+      shoes: shoes
     });
   }
 
@@ -177,12 +190,13 @@ class App extends React.Component {
           />
         )} />
         <Route
-          path="/genres/:id"
+          exact path="/genres/:id"
           render={(props) => {
             const { id } = props.match.params;
             return <ShoePage
               id={id}
               shoe={this.state.shoe}
+              shoes={this.state.shoes}
               handleFormChange={this.handleFormChange}
               mountEditForm={this.mountEditForm}
               editShoe={this.editShoe}
@@ -192,25 +206,29 @@ class App extends React.Component {
             />
           }} />
         <Route
-          path="/new/shoe"
-          render={() => (
-            <createShoe
+          path="/genres/:id/new/shoe"
+          render={(props) => {
+            const genreId = props.match.params.id
+            return <CreateShoe
               handleFormChange={this.handleFormChange}
-              teacherForm={this.state.shoeForm}
-              newTeacher={this.newShoe} />
-          )} />
+              shoeForm={this.state.shoeForm}
+              newShoe={this.newShoe}
+              genreId={genreId}
+            />
+          }
+          } />
         <Route exact path='/shoes/:shoeId/edit' render={() => (
           <EditShoe
             shoeForm={this.state.shoeForm}
             handleFormChange={this.handleFormChange}
             handleSubmit={this.editShoe}
           />
-           )} />
+        )} />
+
       </div>
     );
   }
 }
 export default withRouter(App);
-
 
 
