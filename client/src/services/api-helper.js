@@ -29,3 +29,25 @@ export const verifyUser = async () => {
   }
   return false
 }
+
+export const createShoe = async (data) => {
+  const resp = await api.post('/shoes', { shoe: data })
+  return resp.data
+}
+export const readAllShoes = async () => {
+  const resp = await api.get('/shoes')
+  return resp.data
+}
+export const updateShoe = async (id, data) => {
+  const resp = await api.put(`/shoes/${id}`, { shoe: data })
+  return resp.data
+}
+export const destroyShoe = async (id) => {
+  const resp = await api.delete(`/shoes/${id}`)
+  return resp.data
+}
+
+export const readAllGenres = async () => {
+  const resp = await api.get('/genres')
+  return resp.data
+}
