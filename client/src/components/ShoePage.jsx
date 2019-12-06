@@ -1,80 +1,46 @@
 import React, { Component } from 'react';
-import EditShoe from './EditShoe'
-import { Route } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
+import { shoesByGenre, destroyShoe } from '../services/api-helper';
 
 class ShoePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isEdit: false
-    }
-  }
 
   async componentDidMount() {
-    await this.props.mountEditForm(this.props.id);
+    // console.log("props", this.props.id)
+    this.props.getGenreShoes(this.props.id)
+
   }
 
+
+
   render() {
-    const { shoe } = this.props;
-    // debugger;
+    const { shoes } = this.props;
     return (
-      <div className="shoe-page">
-
-        {shoe === undefined ? <h2>Loading . . .</h2> : (
-          <div>
-            {this.state.isEdit ?
+      <>
+        <div>
+          {shoes ?
+            shoes.map(shoe => (
               <>
-              <img alt={shoe.name} src={shoe.image_url} />
-              <Route path={'/shoes/:id/edit'} render={() => (
-                <EditShoe
-                  handleFormChange={this.props.handleFormChange}
+                <h1>{shoe.name}</h1>
+                <img alt={shoe.name} src={shoe.image_url} />
+                <button onClick={() => {
+                  this.props.history.push(`/shoes/${shoe.id}/edit`)
+                }}>Edit</button>
 
-                  handleSubmit={() => {
-                    this.props.editShoe();
-                    this.setState({ isEdit: false })
-                    this.props.history.push(`/shoes/${this.props.shoeForm.id}`)
-                  }}
-                  shoeForm={this.props.shoeForm} />
-                )} />
-                </>
-              :
-              <>
-                {
-                  this.props.currentUser ?
-                    <>
-                      {
-                        this.props.shoes.filter(shoe => shoe.genre_id === parseInt(this.props.id)).map(shoe => (
-                          <React.Fragment key={shoe.id}>
-                            <img alt={shoe.name} src={shoe.image_url} />
-                            <h1>{shoe.name}</h1>
-                            <button onClick={() => {
-                              this.setState({
-                                isEdit: true
-                              })
-                              this.props.history.push(`/shoes/${shoe.id}/edit`)
-                            }}>Edit</button>
-                            <button onClick={() => {
-                              this.props.destroyShoe(shoe.id);
-                              this.props.history.push('/')
-                            }}>Delete</button>
-                          </React.Fragment>
-
-                        ))
-                      }
-                    </>
-                    :
-                    <>
-                    </>
-                }
+                <button onClick={() => {
+                  this.destroyShoe(shoe.id);
+                }}>Delete</button>
               </>
-            }
-          </div>)
-        }
+            )) :
+            <h2>Loading . . .</h2>
+
+
+          }
+        </div>
         <button onClick={() => {
           this.props.history.push(`/genres/${this.props.id}/new/shoe`)
         }}>Add</button>
-      </div >)
+      </>
+    )
   }
 }
 

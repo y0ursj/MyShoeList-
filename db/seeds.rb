@@ -91,15 +91,125 @@ genres = Genre.create! (
     shoes = Shoe.create! (
       [
         {
-        name: "Jordan 1",
-        description:"HELLO",
-        price:160.45,
-        image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/Fcatalog/product/3/1/317111-062_1.png",
+        name: "Jordan 1 Union",
+        description:"The Union x Air Jordan 1 Storm Blue is one of two special editions of Michael Jordan's first signature shoe from the Los Angeles menswear boutique.",
+        price:190.00,
+        image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/B/V/BV1300-146_1_1.png",
         genre_id: 1,
         user: david
-        }
-        
-      ]
-    )
+        },
+        {
+        name: "Jordan 2 Don Cs",
+        description:"The Air Jordan 2’s second ultra-premium redesign by Don C, this Beach colorway features a quilted buttery-soft leather upper in sandy tan.",
+        price:200.00,
+        image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/8/3/839604_250_1.png",
+        genre_id: 2,
+        user: david
+        },
+        {
+          name: "Jordan 3 Black Cement",
+          description:"Jordan 3 Black/Cement has left many Jordan collectors fiending for a fresh pair, so demand was higher than ever when these dropped on MJ’s birthday",
+          price:200.00,
+          image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/8/5/854262_001_1.png",
+          genre_id: 3,
+          user: david
+          },
+          {
+            name: "Jordan 4 Cool Greys",
+            description:"The upper features a Cool Grey synthetic nubuck base that covers the toe, mid-panel, and heel. Tonal elements come into play as the mesh found on both the tongue and mid-panel offers subtle contrasting against the surrounding nubuck material. ",
+            price:200.00,
+            image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/B/Q/BQ7669-007_1.png",
+            genre_id: 4,
+            user: david
+            },
+            {
+              name: "Jordan 5 Grapes",
+              description:"Grape Colorway",
+              price:200.00,
+              image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/1/3/136027-108_1.png",
+              genre_id: 5,
+              user: david
+              },
+              {
+                name: "Jordan 6 Travis Scott",
+                description:"The Travis Scott x Air Jordan 6 marks the third time the world famous rapper and Jordan Brand have partnered on an Air Jordan. ",
+                price:200.00,
+                image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/C/N/CN1084-200_1.png",
+                genre_id: 6,
+                user: david
+                },
+                {
+                name: "Jordan 7 Olympic",
+                description:"The Travis Scott x Air Jordan 6 marks the third time the world famous rapper and Jordan Brand have partnered on an Air Jordan. ",
+                price:190.00,
+                image_url: "The original and iconic colorway worn by Michael Jordan during the 1992 Olympics, this Air Jordan 7 features a white and silver upper with patriotic accents. No Air Jordan 7 collection can be complete without a pair of this historic colorway.",
+                genre_id: 7,
+                user: david
+                },
+                {
+                name: "Jordan 8 Playoffs",
+                description:"Whether you want to call it the “Road”, “Bred”, of “Playoffs” colorway, this is the iconic original colorway of Michael Jordan’s strapped-up 8th signature shoe. MJ wore this black and red colorway during his and the Bulls championship run in 1993 to complete their first three-peat.",
+                price:200.00,
+                image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/0/305381-061_1.png",
+                genre_id: 8,
+                user: david
+                },
+                {
+                name: "Jordan 9 Olive",
+                description:"A famed original colorway of the Air Jordan 9, this distinct color scheme features a black and olive upper to make for one of the more unusual, but still appealing, OG Air Jordan colorways.",
+                price:200.00,
+                image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/0/302370-020_1.png",
+                genre_id: 9,
+                user: david
+                },
+                {
+                  name: "Jordan 10 Orlando",
+                  description:"A famed original colorway of the Air Jordan 9, this distinct color scheme features a black and olive upper to make for one of the more unusual, but still appealing, OG Air Jordan colorways.",
+                  price:190.00,
+                  image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/1/310805-108_1.png",
+                  genre_id: 10,
+                  user: david
+                  },
+                  {
+                    name: "Jordan 11 Bred",
+                    description:"Worn on court by Michael Jordan throughout the 1996 NBA Playoffs en route to the championship and NBA Finals MVP honors, the shoe is just as historic as it is aesthetically pleasing.",
+                    price:200.00,
+                    image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/7/378039-010_1.png",
+                    genre_id: 11,
+                    user: david
+                    },
+                    {
+                      name: "Jordan 12 Flu-Game",
+                      description:"In 2016 the beloved Air Jordan 12 “Flu Game” made a triumphant return in the iconic black and red color scheme that Michael Jordan made legendary in 1997.",
+                      price:200.00,
+                      image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/1/5/153265-002_1_1.png",
+                      genre_id: 12,
+                      user: david
+                      },
+                      {
+                        name: "Jordan 13 Olive",
+                        description:"A famed original colorway of the Air Jordan 9, this distinct color scheme features a black and olive upper to make for one of the more unusual, but still appealing, OG Air Jordan colorways.",
+                        price:200.00,
+                        image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/0/302370-020_1.png",
+                        genre_id: 13,
+                        user: david
+                        },
+                        {
+                          name: "Jordan 14 Olive",
+                          description:"A famed original colorway of the Air Jordan 9, this distinct color scheme features a black and olive upper to make for one of the more unusual, but still appealing, OG Air Jordan colorways.",
+                          price:200.00,
+                          image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/0/302370-020_1.png",
+                          genre_id: 14,
+                          user: david
+                          },
+                          {
+                            name: "Jordan 15 Olive",
+                            description:"A famed original colorway of the Air Jordan 9, this distinct color scheme features a black and olive upper to make for one of the more unusual, but still appealing, OG Air Jordan colorways.",
+                            price:200.00,
+                            image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/0/302370-020_1.png",
+                            genre_id: 15,
+                            user: david
+                            },
+                          ])
 
 

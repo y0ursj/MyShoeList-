@@ -2,11 +2,14 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 function CreateShoe(props) {
+  if (props.shoeForm.id) {
+    props.resetShoeAdd()
+  }
   return (
     <div className="create-form" >
       <h2>Create a new shoe</h2>
-      {
-        props.shoeForm &&
+      {/* {
+        props.shoeForm && */}
 
         <form onSubmit={(e) => {
           e.preventDefault();
@@ -38,7 +41,7 @@ function CreateShoe(props) {
             onChange={props.handleFormChange} />
           <button>Submit</button>
         </form>
-      }
+      {/* } */}
     </div >
   )
 }

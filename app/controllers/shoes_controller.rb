@@ -4,8 +4,14 @@ class ShoesController < ApplicationController
 
 
   # GET /shoes
+def all
+  @shoes=Shoe.all
+  render json: @shoes
+end
+
   def index
-    @shoes = Shoe.all
+    @genre = Genre.find(params[:genre_id])
+    @shoes = @genre.shoes
 
     render json: @shoes
   end
@@ -17,6 +23,7 @@ class ShoesController < ApplicationController
 
   # POST /shoes
   def create
+    puts shoe_params
     @shoe = Shoe.new(shoe_params)
     @shoe.user = @current_user
     @genre = Genre.find(params[:genre_id])

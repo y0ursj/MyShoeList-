@@ -14,7 +14,8 @@ import {
   updateShoe,
   destroyShoe,
   createShoe,
-  readAllGenres
+  readAllGenres,
+  shoesByGenre
 
 } from './services/api-helper';
 import GenrePage from './components/GenrePage';
@@ -27,14 +28,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
       currentUser: null,
       authFormData: {
         username: '',
         password: ''
       },
-      genres: [],
       shoes: [],
+      genres: [],
       shoeForm: {
         name: "",
         image_url: "",
@@ -43,18 +43,13 @@ class App extends React.Component {
       }
     };
   }
+
   async componentDidMount() {
     await this.getGenres()
     const currentUser = await verifyUser();
     if (currentUser) {
       this.setState({ currentUser })
     }
-  }
-  getShoes = async () => {
-    const shoes = await readAllShoes();
-    this.setState({
-      shoes
-    })
   }
 
   getGenres = async () => {
@@ -65,8 +60,15 @@ class App extends React.Component {
   }
 
   newShoe = async (genreId) => {
-    debugger;
-    const shoe = await createShoe(this.state.shoeForm, genreId);
+    let test =
+    {
+      name: this.state.shoeForm.name,
+      image_url: this.state.shoeForm.image_url,
+      description: this.state.shoeForm.description,
+      price: this.state.shoeForm.price
+    }
+    // const shoe = await createShoe(this.state.shoeForm, genreId);
+    const shoe = await createShoe(test, genreId);
     this.setState(prevState => ({
       shoes: [...prevState.shoes, shoe],
       shoeForm: {
@@ -78,9 +80,9 @@ class App extends React.Component {
     }))
   }
 
-  editShoe = async () => {
+  editShoe = async (shoeId) => {
     const { shoeForm } = this.state
-    const newShoe = await updateShoe(shoeForm.id, shoeForm);
+    const newShoe = await updateShoe(shoeId, shoeForm);
     this.setState(prevState => (
       {
         shoes: prevState.shoes.map(shoe => {
@@ -98,6 +100,14 @@ class App extends React.Component {
     }))
   }
 
+  getGenreShoes = async (id) => {
+    const genreId = id
+    // console.log("genreId", genreId)
+    const shoes = await shoesByGenre(genreId);
+    this.setState({
+      shoes
+    })
+  }
 
   handleFormChange = (e) => {
     const { name, value } = e.target;
@@ -109,14 +119,30 @@ class App extends React.Component {
     }))
   }
 
-  mountEditForm = async (id) => {
-    const shoes = await readAllShoes();
-    const shoe = shoes.find(el => el.id === parseInt(id));
-
+  resetShoeAdd = () => {
     this.setState({
-      shoe: shoe,
-      shoeForm: shoe,
-      shoes: shoes
+      shoeForm: {
+        name: "",
+        image_url: "",
+        description: "",
+        price: ""
+      }
+    })
+  }
+
+  mountEditForm = async (shoe) => {
+    const shoes = await readAllShoes();
+    const editShoe = shoes.find(el => el.id === parseInt(shoe));
+    const { name, image_url, description, price } = editShoe
+    this.setState({
+      shoeForm: {
+        name,
+        image_url,
+        description,
+        price
+      }
+      // shoeForm: shoe,
+      // shoes: shoes
     });
   }
 
@@ -195,13 +221,13 @@ class App extends React.Component {
             const { id } = props.match.params;
             return <ShoePage
               id={id}
-              shoe={this.state.shoe}
               shoes={this.state.shoes}
+              getGenreShoes={this.getGenreShoes}
+              destroyShoe={this.destroyShoe}
               handleFormChange={this.handleFormChange}
               mountEditForm={this.mountEditForm}
               editShoe={this.editShoe}
               shoeForm={this.state.shoeForm}
-              destroyShoe={this.destroyShoe}
               currentUser={this.state.currentUser}
             />
           }} />
@@ -213,15 +239,18 @@ class App extends React.Component {
               handleFormChange={this.handleFormChange}
               shoeForm={this.state.shoeForm}
               newShoe={this.newShoe}
+              resetShoeAdd={this.resetShoeAdd}
               genreId={genreId}
             />
           }
           } />
-        <Route exact path='/shoes/:shoeId/edit' render={() => (
+        <Route exact path='/shoes/:shoeId/edit' render={(props) => (
           <EditShoe
+            shoeId={props.match.params.shoeId}
             shoeForm={this.state.shoeForm}
             handleFormChange={this.handleFormChange}
             handleSubmit={this.editShoe}
+            mountEditForm={this.mountEditForm}
           />
         )} />
 

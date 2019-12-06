@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const baseUrl = 'http://localhost:3000'
+// const baseUrl = 'https://shoe-list.herokuapp.com/'
 
 const api = axios.create({
   baseURL: baseUrl
@@ -31,12 +32,16 @@ export const verifyUser = async () => {
 }
 
 export const createShoe = async (data, genreId) => {
-  debugger;
   const resp = await api.post(`/genres/${genreId}/shoes`, { shoe: data })
   return resp.data
 }
-export const readAllShoes = async () => {
-  const resp = await api.get('/shoes')
+export const readAllShoes = async (genreId) => {
+  console.log("test", genreId)
+  const resp = await api.get(`/shoes`)
+  return resp.data
+}
+export const shoesByGenre = async (id) => {
+  const resp = await api.get(`/genres/${id}/shoes`)
   return resp.data
 }
 export const updateShoe = async (id, data) => {
