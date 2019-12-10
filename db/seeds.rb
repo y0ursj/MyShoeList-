@@ -98,7 +98,7 @@ genres = Genre.create! (
         description:"The Union x Air Jordan 1 Storm Blue is one of two special editions of Michael Jordan's first signature shoe from the Los Angeles menswear boutique.",
         price:190.00,
         image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/B/V/BV1300-146_1_1.png",
-        genre_id: 1,
+        genre: genres[0],
         user: david
         },
         {
@@ -106,7 +106,7 @@ genres = Genre.create! (
         description:"The Air Jordan 2’s second ultra-premium redesign by Don C, this Beach colorway features a quilted buttery-soft leather upper in sandy tan.",
         price:200.00,
         image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/8/3/839604_250_1.png",
-        genre_id: 2,
+        genre: genres[1],
         user: david
         },
         {
@@ -114,7 +114,7 @@ genres = Genre.create! (
           description:"Jordan 3 Black/Cement has left many Jordan collectors fiending for a fresh pair, so demand was higher than ever when these dropped on MJ’s birthday",
           price:200.00,
           image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/8/5/854262_001_1.png",
-          genre_id: 3,
+          genre: genres[2],
           user: david
           },
           {
@@ -122,7 +122,7 @@ genres = Genre.create! (
             description:"The upper features a Cool Grey synthetic nubuck base that covers the toe, mid-panel, and heel. Tonal elements come into play as the mesh found on both the tongue and mid-panel offers subtle contrasting against the surrounding nubuck material. ",
             price:200.00,
             image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/B/Q/BQ7669-007_1.png",
-            genre_id: 4,
+            genre: genres[3],
             user: david
             },
             {
@@ -130,7 +130,7 @@ genres = Genre.create! (
               description:"Grape Colorway",
               price:200.00,
               image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/1/3/136027-108_1.png",
-              genre_id: 5,
+              genre: genres[4],
               user: david
               },
               {
@@ -138,7 +138,7 @@ genres = Genre.create! (
                 description:"The Travis Scott x Air Jordan 6 marks the third time the world famous rapper and Jordan Brand have partnered on an Air Jordan. ",
                 price:200.00,
                 image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/C/N/CN1084-200_1.png",
-                genre_id: 6,
+                genre: genres[5],
                 user: david
                 },
                 {
@@ -146,7 +146,7 @@ genres = Genre.create! (
                 description:"The Travis Scott x Air Jordan 6 marks the third time the world famous rapper and Jordan Brand have partnered on an Air Jordan. ",
                 price:190.00,
                 image_url: "The original and iconic colorway worn by Michael Jordan during the 1992 Olympics, this Air Jordan 7 features a white and silver upper with patriotic accents. No Air Jordan 7 collection can be complete without a pair of this historic colorway.",
-                genre_id: 7,
+                genre: genres[6],
                 user: david
                 },
                 {
@@ -154,7 +154,7 @@ genres = Genre.create! (
                 description:"Whether you want to call it the “Road”, “Bred”, of “Playoffs” colorway, this is the iconic original colorway of Michael Jordan’s strapped-up 8th signature shoe. MJ wore this black and red colorway during his and the Bulls championship run in 1993 to complete their first three-peat.",
                 price:200.00,
                 image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/0/305381-061_1.png",
-                genre_id: 8,
+                genre: genres[7],
                 user: david
                 },
                 {
@@ -162,7 +162,7 @@ genres = Genre.create! (
                 description:"A famed original colorway of the Air Jordan 9, this distinct color scheme features a black and olive upper to make for one of the more unusual, but still appealing, OG Air Jordan colorways.",
                 price:200.00,
                 image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/0/302370-020_1.png",
-                genre_id: 9,
+                genre: genres[8],
                 user: david
                 },
                 {
@@ -170,7 +170,7 @@ genres = Genre.create! (
                   description:"A famed original colorway of the Air Jordan 9, this distinct color scheme features a black and olive upper to make for one of the more unusual, but still appealing, OG Air Jordan colorways.",
                   price:190.00,
                   image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/1/310805-108_1.png",
-                  genre_id: 10,
+                  genre: genres[9],
                   user: david
                   },
                   {
@@ -178,7 +178,7 @@ genres = Genre.create! (
                     description:"Worn on court by Michael Jordan throughout the 1996 NBA Playoffs en route to the championship and NBA Finals MVP honors, the shoe is just as historic as it is aesthetically pleasing.",
                     price:200.00,
                     image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/7/378039-010_1.png",
-                    genre_id: 11,
+                    genre: genres[10],
                     user: david
                     },
                     {
@@ -186,7 +186,7 @@ genres = Genre.create! (
                       description:"In 2016 the beloved Air Jordan 12 “Flu Game” made a triumphant return in the iconic black and red color scheme that Michael Jordan made legendary in 1997.",
                       price:200.00,
                       image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/1/5/153265-002_1_1.png",
-                      genre_id: 12,
+                      genre: genres[11],
                       user: david
                       },
                       {
@@ -194,7 +194,7 @@ genres = Genre.create! (
                         description:"This iteration of the Air Jordan 13 Retro is a little more muted than the usual colorways. Featuring an all white base, Nike added french blue panels on the sides and flint grey leather on the outsole. The soles are white to match the uppers and tongue.",
                         price:220.00,
                         image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D1440/media/catalog/product/4/1/414574_401_1.png",
-                        genre_id: 13,
+                        genre: genres[12],
                         user: david
                         },
                         {
@@ -202,7 +202,7 @@ genres = Genre.create! (
                           description:"From the original 1999 release of the Air Jordan 14, this black and red colorway is by far the most iconic thanks to Michael Jordan wearing them for his famous “Last Shot” that sealed the deal for the Chicago Bulls' second three-peat in the 1998 NBA Finals.",
                           price:200.00,
                           image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D1440/media/catalog/product/3/1/311832-010_1.png",
-                          genre_id: 14,
+                          genre: genres[13],
                           user: david
                           },
                           {
@@ -210,7 +210,7 @@ genres = Genre.create! (
                             description:"The Doernbecher x Air Jordan 15 is a member of the 2018 Doernbecher Freestyle Collection by Nike. The annual collection of sneakers designed by patients at the Doernbecher Children’s Hospital in Portland, Oregon was highlighted in 2018 by this Air Jordan 15 that was designed by Donovan Dinneen.",
                             price:200.00,
                             image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D1440/media/catalog/product/B/V/BV7107-017_1.png",
-                            genre_id: 15,
+                            genre: genre[14],
                             user: david
                             },
                           ])
