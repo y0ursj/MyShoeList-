@@ -210,7 +210,7 @@ genres = Genre.create! (
                             description:"The Doernbecher x Air Jordan 15 is a member of the 2018 Doernbecher Freestyle Collection by Nike. The annual collection of sneakers designed by patients at the Doernbecher Children’s Hospital in Portland, Oregon was highlighted in 2018 by this Air Jordan 15 that was designed by Donovan Dinneen.",
                             price:200.00,
                             image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D1440/media/catalog/product/B/V/BV7107-017_1.png",
-                            genres: genre[14],
+                            genres: genres[14],
                             user: david
                             },
                           ])
