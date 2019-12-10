@@ -13,6 +13,7 @@ class ShoesControllerTest < ActionDispatch::IntegrationTest
   test "should create shoe" do
     assert_difference('Shoe.count') do
       post shoes_url, params: { shoe: { description: @shoe.description, genre_id: @shoe.genre_id, image_url: @shoe.image_url, name: @shoe.name, price: @shoe.price } }, as: :json
+      # post shoes_url, params: { shoe: { description: @shoe.description, image_url: @shoe.image_url, name: @shoe.name, price: @shoe.price } }, as: :json
     end
 
     assert_response 201
@@ -25,6 +26,7 @@ class ShoesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update shoe" do
     patch shoe_url(@shoe), params: { shoe: { description: @shoe.description, genre_id: @shoe.genre_id, image_url: @shoe.image_url, name: @shoe.name, price: @shoe.price } }, as: :json
+    # patch shoe_url(@shoe), params: { shoe: { description: @shoe.description, image_url: @shoe.image_url, name: @shoe.name, price: @shoe.price } }, as: :json
     assert_response 200
   end
 

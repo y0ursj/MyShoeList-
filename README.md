@@ -1,24 +1,45 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# MyShoeList
+## Project Purpose: ShoeList is a website where users can add their favorite jordan shoes based branding and type/number of shoe.Shoe list will Jordans 1-15.
 
-Things you may want to cover:
+## Features: The features of our site includes saving users favorite shoes and Jordan type.Information for each shoe listing. Library of shoes in the database that will be saved for viewing purposes. 
 
-* Ruby version
+## Component Hierarchy
+1. <App.js />
+1a. <Header>
+1b. <Footer>
+2a. <Components/Shoes />
+2b. <Components/User />
+2c. <Components/Comments />
+  
+  
+  ## Challenges: 
+- Populating accounts for the appication.
+- SEED DATA INFO
+- Comment section 
 
-* System dependencies
 
-* Configuration
+## MVP 
+- Allowing different user accounts.
+- Tracking shoes based on user information.
+- Adding different shoes.
+- Adding comment section.
 
-* Database creation
+## Post-MVP 
+- search feature
+- carousel
+- ratings resale prices
+- 
 
-* Database initialization
+## ERD 
 
-* How to run the test suite
+https://www.lucidchart.com/invitations/accept/5873234c-a4bf-44c1-8c1a-b72f66841714
 
-* Services (job queues, cache servers, search engines, etc.)
+## WireFrame
 
-* Deployment instructions
+- https://wireframe.cc/tKtib2
+- https://wireframe.cc/DrCuX7
+- https://wireframe.cc/DrCuX7
+- https://wireframe.cc/m8BXxb
+- https://wireframe.cc/1GBqHl
 
-* ...
