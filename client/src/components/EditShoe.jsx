@@ -8,16 +8,16 @@ class EditShoe extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>Edit Shoe</h3>
-        <form onSubmit={(e) => {
+      <div className='edit-form-wrapper'>
+        <form className='edit-form'onSubmit={(e) => {
           e.preventDefault();
           this.props.handleSubmit(this.props.shoeId)
         }}>
+          <h3>Edit Shoe</h3>
           <p>Photo Link:</p>
           <input
             type="text"
-            name="photo"
+            name="image_url"
             value={this.props.shoeForm.image_url}
             onChange={this.props.handleFormChange} />
           <p>Price</p>
@@ -38,6 +38,7 @@ class EditShoe extends React.Component {
             name="name"
             value={this.props.shoeForm.name}
             onChange={this.props.handleFormChange} />
+          <br/>
           <button>Submit</button>
         </form>
       </div >

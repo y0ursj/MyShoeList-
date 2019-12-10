@@ -6,15 +6,14 @@ function CreateShoe(props) {
     props.resetShoeAdd()
   }
   return (
-    <div className="create-form" >
-      <h2>Create a new shoe</h2>
+    <div className="create-form-wrapper" >
       {/* {
         props.shoeForm && */}
-
-        <form onSubmit={(e) => {
+        <form className="create-form" onSubmit={(e) => {
           e.preventDefault();
           props.newShoe(props.genreId)
-        }}>
+      }}>
+          <h2>Create a new shoe</h2>
           <p>Photo Link:</p>
           <input
             type="text"
@@ -38,7 +37,8 @@ function CreateShoe(props) {
             type="string"
             name="name"
             value={props.shoeForm.name}
-            onChange={props.handleFormChange} />
+          onChange={props.handleFormChange} />
+        <br/>
           <button>Submit</button>
         </form>
       {/* } */}

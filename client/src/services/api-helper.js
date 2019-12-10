@@ -44,6 +44,10 @@ export const shoesByGenre = async (id) => {
   const resp = await api.get(`/genres/${id}/shoes`)
   return resp.data
 }
+export const shoeByGenre = async (shoeId) => {
+  const resp = await api.get(`/genres/genreId/shoes/${shoeId}`)
+  return resp.data
+}
 export const updateShoe = async (id, data) => {
   const resp = await api.put(`/shoes/${id}`, data)
   return resp.data

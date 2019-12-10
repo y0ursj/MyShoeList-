@@ -5,13 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Shoe.destroy_all
+Genre.destroy_all
+User.destroy_all
 
 david = User.create!(username: "BigJohn97", password: "123456")
 
 genres = Genre.create! (
     [
       {
-        name: "Air Jordan 1",
+        name: "Air Jordan I",
         description: "The Air Jordan 1 was first produced for Michael Jordan in 1984. It was designed by Peter C. Moore.The red and black colorway of the Nike Air Ship, the prototype for the Jordan I, was later outlawed by then-NBA Commissioner David Stern for having very little white on them (this rule, known as the '51 percent' rule, was repealed in the late 2000s.",
         image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/5/7/575441-101_1_1.png"
       },
@@ -187,26 +190,26 @@ genres = Genre.create! (
                       user: david
                       },
                       {
-                        name: "Jordan 13 Olive",
-                        description:"A famed original colorway of the Air Jordan 9, this distinct color scheme features a black and olive upper to make for one of the more unusual, but still appealing, OG Air Jordan colorways.",
-                        price:200.00,
-                        image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/0/302370-020_1.png",
+                        name: "Jordan 13 Flint",
+                        description:"This iteration of the Air Jordan 13 Retro is a little more muted than the usual colorways. Featuring an all white base, Nike added french blue panels on the sides and flint grey leather on the outsole. The soles are white to match the uppers and tongue.",
+                        price:220.00,
+                        image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D1440/media/catalog/product/4/1/414574_401_1.png",
                         genre_id: 13,
                         user: david
                         },
                         {
-                          name: "Jordan 14 Olive",
-                          description:"A famed original colorway of the Air Jordan 9, this distinct color scheme features a black and olive upper to make for one of the more unusual, but still appealing, OG Air Jordan colorways.",
+                          name: "Jordan 14 Last Shot",
+                          description:"From the original 1999 release of the Air Jordan 14, this black and red colorway is by far the most iconic thanks to Michael Jordan wearing them for his famous “Last Shot” that sealed the deal for the Chicago Bulls' second three-peat in the 1998 NBA Finals.",
                           price:200.00,
-                          image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/0/302370-020_1.png",
+                          image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D1440/media/catalog/product/3/1/311832-010_1.png",
                           genre_id: 14,
                           user: david
                           },
                           {
-                            name: "Jordan 15 Olive",
-                            description:"A famed original colorway of the Air Jordan 9, this distinct color scheme features a black and olive upper to make for one of the more unusual, but still appealing, OG Air Jordan colorways.",
+                            name: "Jordan 15 Doernbecher",
+                            description:"The Doernbecher x Air Jordan 15 is a member of the 2018 Doernbecher Freestyle Collection by Nike. The annual collection of sneakers designed by patients at the Doernbecher Children’s Hospital in Portland, Oregon was highlighted in 2018 by this Air Jordan 15 that was designed by Donovan Dinneen.",
                             price:200.00,
-                            image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D2000/media/catalog/product/3/0/302370-020_1.png",
+                            image_url: "https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D1440/media/catalog/product/B/V/BV7107-017_1.png",
                             genre_id: 15,
                             user: david
                             },
